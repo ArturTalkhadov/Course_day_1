@@ -18,32 +18,32 @@ final_bill=0
 if size=="S":
     if add_pipperoni=="Y":
         if extra_cheese=="Y":
-            print(f"Стоимость пиццы: {Small_Pizza+Ps+Exch}")
+            print(f"Стоимость пиццы:$ {Small_Pizza+Ps+Exch}")
         else:
-            print(f"Стоимость пиццы: {Small_Pizza+Ps}")
+            print(f"Стоимость пиццы:$ {Small_Pizza+Ps}")
     elif extra_cheese=="Y":
-        print(f"Стоимость пиццы: {Small_Pizza+Exch}")
+        print(f"Стоимость пиццы:$ {Small_Pizza+Exch}")
     else:
-        print(f"Стоимость пиццы: {Small_Pizza}")
+        print(f"Стоимость пиццы:$ {Small_Pizza}")
 
 elif size=="M":
     if add_pipperoni=="Y":
         if extra_cheese=="Y":
-            print(f"Стоимость пиццы: {Medium_Pizza+Pml+Exch}")
+            print(f"Стоимость пиццы:$ {Medium_Pizza+Pml+Exch}")
         else:
-            print(f"Стоимость пиццы: {Medium_Pizza+Pml}")
+            print(f"Стоимость пиццы:$ {Medium_Pizza+Pml}")
     elif extra_cheese=="Y":
-        print(f"Стоимость пиццы: {Medium_Pizza+Exch}")
+        print(f"Стоимость пиццы:$ {Medium_Pizza+Exch}")
     else:
-        print(f"Стоимость пиццы: {Medium_Pizza}")
+        print(f"Стоимость пиццы:$ {Medium_Pizza}")
 
 else:
     if add_pipperoni=="Y":
         if extra_cheese=="Y":
-            print(f"Стоимость пиццы: {Large_Pizza+Pml+Exch}")
+            print(f"Стоимость пиццы:$ {Large_Pizza+Pml+Exch}")
         else:
-            print(f"Стоимость пиццы: {Large_Pizza+Pml}")
+            print(f"Стоимость пиццы:$ {Large_Pizza+Pml}")
     elif extra_cheese=="Y":
-        print(f"Стоимость пиццы: {Large_Pizza+Exch}")
+        print(f"Стоимость пиццы:$ {Large_Pizza+Exch}")
     else:
-        print(f"Стоимость пиццы: {Large_Pizza}")
+        print(f"Стоимость пиццы:$ {Large_Pizza}")
