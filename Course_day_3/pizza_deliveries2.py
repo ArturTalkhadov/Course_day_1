@@ -19,4 +19,4 @@ if add_pipperoni=="Y":
 if extra_cheese=="Y":
     bill+=1
 
-print("Стоимость вашей пиццы равна:$ ")
+print(f"Стоимость вашей пиццы равна:$ {bill} ")
