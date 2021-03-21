@@ -7,4 +7,4 @@ for i in slist:
         max_len=len(i)
         max_string=i
 
-print(f"самое длинное слово состоит из {max_len}, это слово: {max_string}")
+print(f"самое длинное слово состоит из {max_len} букв, это слово: {max_string}")
