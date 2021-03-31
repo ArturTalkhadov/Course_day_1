@@ -16,12 +16,17 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
             'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 print(logo)
+continue_s = True
+while continue_s:
+    direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
+    text = input("Type your message:\n").lower()
+    shift = int(input("Type the shift number:\n"))
 
-direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
-text = input("Type your message:\n").lower()
-shift = int(input("Type the shift number:\n"))
-
-if direction == "encode":
-    cript(text, shift)
-else:
-    decrypt(text, shift)
+    if direction == "encode":
+        cript(text, shift)
+    else:
+        decrypt(text, shift)
+    choice = input("Type 'yes' if you want to go again. Otherwise type 'no'\n")
+    if choice == 'no':
+        continue_s= False
+        print("Goodbye")
