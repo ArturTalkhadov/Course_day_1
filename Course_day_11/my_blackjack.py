@@ -8,6 +8,9 @@ def append_card(spisok):
     else:
         return spisok.append(rand)
 
+def calculate_score(cards):
+    
+
 player_cards=[]
 computer_cards=[]
 
@@ -24,11 +27,12 @@ def blackjack():
             end = True
             player_cards.clear()
             computer_cards.clear()
-            append_card(player_cards)
-            append_card(player_cards)
-            append_card(computer_cards)
+            #раздача 2 карты игроку и 2 диллеру:
+            for i in range(2):
+                append_card(player_cards)
+                append_card(computer_cards)
             print(f"    Your cards: {player_cards}, current score: {sum(player_cards)}")
-            print(f"    Computer's first card: {sum(computer_cards)}")
+            print(f"    Computer's first card: {computer_cards[0]}")
             while end:
                 get_card = input("Type 'y' to get another card, type 'n' to pass: ")
                 if get_card == "y":
