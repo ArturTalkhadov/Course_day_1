@@ -1,4 +1,12 @@
 import random
+import os
+from art import logo
+
+def cls():
+    """
+    функция для очистки экрана
+    """
+    os.system('CLS')
 
 def append_card(spisok):
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
@@ -9,7 +17,13 @@ def append_card(spisok):
         return spisok.append(rand)
 
 def calculate_score(cards):
-    
+    if sum(cards) == 21 and len(cards) == 2:
+        return 0
+    if 11 in cards and sum(cards)>21:
+        cards.remove(11)
+        cards.append(1)
+
+    return sum(cards)
 
 player_cards=[]
 computer_cards=[]
@@ -23,6 +37,8 @@ def blackjack():
         if reason == "n":
             ind = False
         else:
+            cls()
+            print(logo)
             ind = True
             end = True
             player_cards.clear()
@@ -33,20 +49,25 @@ def blackjack():
                 append_card(computer_cards)
             print(f"    Your cards: {player_cards}, current score: {sum(player_cards)}")
             print(f"    Computer's first card: {computer_cards[0]}")
+
+
+            computer_score = calculate_score(computer_cards)
+
+
             while end:
                 get_card = input("Type 'y' to get another card, type 'n' to pass: ")
                 if get_card == "y":
                     append_card(player_cards)
+                    user_score = calculate_score(player_cards)
                     print(f"Your cards: {player_cards}, current score: {sum(player_cards)}")
+                    if user_score == 0 or computer_score == 0 or user_score>21:
+                        end=False
                 else:
                     end = False
 
-            if sum(player_cards)<21:
-                while sum(computer_cards) <= 14:
-                        append_card(computer_cards)
+                if computer_score != 0 and computer_score < 17:
+                    append_card(computer_cards)
 
-            else:
-                append_card(computer_cards)
 
         print(f"    Your final hand: {player_cards}, final score: {sum(player_cards)}")
         print(f"    Computer's final hand: {computer_cards} final score: {sum(computer_cards)}")
